@@ -7,7 +7,7 @@ import { playlistIdState, playlistState } from "../atoms/playlistAtom";
 import useSpotify from "../hooks/useSpotify";
 import Songs from "./Songs";
 
-const colors: string[] = [
+const colors = [
     'from-indigo-500',
     'from-blue-500',
     'from-green-500',
@@ -41,8 +41,8 @@ function Center() {
                 className="flex items-center bg-black space-x-3 opacity-90 transition-opacity hover:opacity-80 cursor-pointer rounded-full p-1 pr-2 text-white"
                 onClick={() => signOut()}
             >
-                <img className="rounded-full h-10 w-10" src={session?.user.image} alt="" />
-                <h2>{session?.user.name}</h2>
+                {session?.user?.image && <img className="rounded-full h-10 w-10" src={session?.user.image} alt="" />}
+                <h2>{session?.user?.name}</h2>
                 <ChevronDownIcon className="h-5 w-5" />
             </div>
         </header>

@@ -10,7 +10,7 @@ import useSpotify from "../hooks/useSpotify"
 
 const Player = () => {
     const spotifyApi = useSpotify();
-    const { data: session, status } = useSession();
+    const { data: session } = useSession();
     const [currentTrackId, setCurrentTrackId] = useRecoilState(currentTrackIdState)
     const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState)
 

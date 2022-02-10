@@ -5,6 +5,7 @@ import {
     PlusCircleIcon,
     RssIcon,
 } from '@heroicons/react/outline'
+
 import { HeartIcon } from '@heroicons/react/solid'
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
@@ -20,9 +21,7 @@ function Sidebar() {
 
     useEffect(() => {
         if (spotifyApi.getAccessToken()) {
-            spotifyApi.getUserPlaylists().then((data) => {
-                setPlaylists(data.body.items);
-            })
+            spotifyApi.getUserPlaylists().then((data) => setPlaylists(data.body.items))
         }
     }, [session, spotifyApi]);
 
