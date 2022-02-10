@@ -57,7 +57,7 @@ function Sidebar() {
             </SidebarButton>
             <hr className="border-t-[0.1px] border-gray-900" />
             {playlists.map(playlist => (
-                <p key={playlist.id} onClick={() => setPlaylistId(playlist.id)} className="cursor-pointer hover:text-white">{playlist.name}</p>
+                <p key={playlist.id} onClick={() => setPlaylistId(playlist.id)} className="cursor-pointer transition-colors hover:text-white">{playlist.name}</p>
             ))}
         </div>
     </div>;
